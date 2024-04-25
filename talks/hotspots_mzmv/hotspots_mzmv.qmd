@@ -30,10 +30,11 @@ execute:
 <h3>Co-directora </h3>
 <h3>Dr. Victoria Pando</h3>
 <h3> Create:   2024-04-24</h3>
-<h3> Updated:  2024-04-24</h3>
-<h3> Compiled: 2024-02-24</h3>
+<h3> Updated:  2024-04-25</h3>
+<h3> Compiled: 2024-02-25</h3>
 <br> 
 
+![](odmap.png){.absolute top="300" left="700" width="1000"}
 
 ## [Transmisión Persistente & Abundancia Persistente: Avances]{.r-fit-text style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
@@ -116,6 +117,11 @@ Antecendentes:
 
 
 ::::
+
+## [Hotspots de los casos importados en CDMX]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
 
 ## [Origen-Destino de la Transmisión no Autóctona de CDMX]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">

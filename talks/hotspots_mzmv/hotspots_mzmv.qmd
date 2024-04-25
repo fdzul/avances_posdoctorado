@@ -1,0 +1,134 @@
+---
+format: 
+  revealjs:
+    #theme: ["theme/q-theme.scss"]
+    slide-number: c/t
+    logo: "https://www.insp.mx/assets/images/insp.png"
+    footer: "[github.com/fdzul](https://github.com/fdzul)"
+    code-copy: true
+    center-title-slide: false
+highlight-style: a11y
+code-link: true
+height: 1080
+width: 1600
+execute: 
+  eval: true
+  echo: true
+---
+
+<h1>Análisis Espacial del Dengue<br>en México</h1>
+
+<h2> </h2>
+
+<hr>
+<br> 
+<h3>Alumno</h3>
+<h3>Dr. Felipe Dzul Manzanilla </h3>
+<br> 
+<h3>Director </h3>
+<h3>Dr. Héctor Gómez-Dantés</h3>
+<h3>Co-directora </h3>
+<h3>Dr. Victoria Pando</h3>
+<h3> Create:   2024-04-24</h3>
+<h3> Updated:  2024-04-24</h3>
+<h3> Compiled: 2024-02-24</h3>
+<br> 
+
+
+## [Transmisión Persistente & Abundancia Persistente: Avances]{.r-fit-text style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+:::: {.columns}
+
+::: {.column style="width: 33.3%; font-size: 90%"}
+|Estados Trabajados|
+|---	|
+| [04 Campeche](https://phenomenal-hotteok-02e188.netlify.app/) | 
+| [07 Chiapas](https://adorable-tiramisu-303de1.netlify.app) |
+| [12 Guerrero](https://astounding-squirrel-94dd18.netlify.app/) |
+| [14 jalisco](https://heartfelt-fudge-936865.netlify.app/) |
+| [16 Michoacan](https://fabulous-mermaid-31ea6a.netlify.app/) |
+| [17 Morelos](https://glistening-griffin-b8023f.netlify.app/) |
+| [20 Oaxaca](https://merry-figolla-08f5bf.netlify.app/)|
+| [23 Quintana Roo](https://helpful-pegasus-ba8bb9.netlify.app/)|
+| [24 San Luis Potosi](https://wonderful-belekoy-db9c08.netlify.app/)|
+| [23 Tabasco](https://capable-torrone-6eae7f.netlify.app/)|
+| [30 Veraruz](https://zippy-bunny-bdd8c7.netlify.app/)|
+| [31 Yucatan](https://keen-dango-d1cd7e.netlify.app/)|
+:::
+
+
+:::{.column style="width: 33.3%;font-size: 90%"}
+|Estados a Trabajar|
+|---	|
+| 06 Colima|
+| 09 Ciudad de México|
+| 11 Guanajuato|
+| 18 Nayarit|
+| 19 Nuevo León|
+| 21 Puebla|
+| 25 Sinaloa|
+| 26 Sonora|
+| 28 Tamaulipas|
+:::
+
+:::{.column style="width: 33.3%;font-size: 90%"}
+|Estados Pendientes|
+|---	|
+| 01 Aguascalientes |
+| 02 Baja California |
+| 03 Baja California Sur|
+| 05 Coahuila|
+| 08 Chihuahua|
+| 10 Durango|
+| 13 Hidalgo|
+| 15 Estado de México|
+| 22 Queretaro|
+| 29 Tlaxcala|
+| 32 Zacatecas|
+:::
+
+::::
+
+## [Zona Metropolitana del Valle de México]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+:::: {.columns}
+
+:::{.column style="width: 45%;font-size: 100%"}
+![](dengue_cdmx.png)
+:::
+
+:::{.column style="width: 55%; font-size: 80%"}
+
+Casos Importado de Dengue y Serotipos en CDMX
+
+![](den_year.png)
+
+Antecendentes:
+
+1) Publicación de una carta al editor de la transmisión autóctona de Dengue en el área metropolitana del Valle de México
+2) Presencia del vector desde el 2018.
+3) Presencia de Casos importados.
+4) Cambio climático que favorece las abundancias del vector y la transmisión en el área metropolitana del Valle de México
+
+:::
+
+
+::::
+
+## [Origen-Destino de la Transmisión no Autóctona de CDMX]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+![](od_map.png)
+
+## [Dios Botic]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+-   ***Bio*** : [https://fdzul.github.io/web_site_fadm/]()
+
+-   ***email*** : [felipe.dzul.m\@gmail.com]()
+
+-   ***celular*** : [9999580167]()
+
+-   ***slide***: [link]()

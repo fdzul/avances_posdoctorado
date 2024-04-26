@@ -510,7 +510,7 @@ DiagrammeR::grViz("digraph {
 <p>Los puntos representan la presencia de *Ae. aegypti* y de casos importados.</p>
 
 
-## [Dios Botic]{style="color:#003300;"}
+## [Escenarios Epidemiológicos en cdmx]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
@@ -555,7 +555,9 @@ DiagrammeR::grViz("digraph {
 :::
 
 ::: grid-item
-```{r aedes, out.height="110%", out.width="110%"}
+```{r aedes, out.height="550%", out.width="110%"}
+#| echo: false
+#| output: true
 aedes <- terra::rast("/Users/fdzul/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/11.output/pred_ae_aegypti.tif")
 ggplot2::ggplot() +
     tidyterra::geom_spatraster(data = aedes,
@@ -571,7 +573,9 @@ ggplot2::ggplot() +
 :::
 
 ::: grid-item
-```{r den_impor, out.height="110%", out.width="110%"}
+```{r den_impor, out.height="550%", out.width="110%"}
+#| echo: false
+#| output: true
 den <- terra::rast("/Users/fdzul/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/11.output/pred_dengue.tif")
 ggplot2::ggplot() +
     tidyterra::geom_spatraster(data = den,
@@ -586,7 +590,7 @@ ggplot2::ggplot() +
 :::
 
 ::: grid-item
-```{r risk, out.height="110%", out.width="110%"}
+```{r risk, echo= FALSE, out.height="550%", out.width="110%"}
 risk <- terra::rast("/Users/fdzul/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/11.output/pred_class_risk.tif")
 
 ggplot2::ggplot() +
@@ -604,6 +608,7 @@ ggplot2::ggplot() +
 
 </body>
 </html>
+
 
 
 ## [Dios Botic]{style="color:#003300;"}

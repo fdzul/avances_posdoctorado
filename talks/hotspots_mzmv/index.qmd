@@ -320,7 +320,8 @@ DiagrammeR::grViz("digraph {
   bases -> indre -> conabio -> mosq -> veim
   {ar veim} -> aedes
  
-}")
+}", heigh = "700px",
+width = "800px")
 ```
 
 :::
@@ -358,7 +359,8 @@ DiagrammeR::grViz("digraph {
   
   sinave -> denv -> cdmx -> dir -> geo -> den_data
   
-}")
+}",heigh = "700px",
+width = "800px")
 ```
 
 :::
@@ -395,7 +397,9 @@ DiagrammeR::grViz("digraph {
   
   gee -> worldclim -> bio -> aoi -> scale -> clim_data
 
-  }")
+  }",
+  heigh = "700px",
+  width = "800px")
 ```
 
 :::

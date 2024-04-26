@@ -118,6 +118,50 @@ Antecendentes:
 
 ::::
 
+
+## [Distribución del vector y Casos Importados de Dengue]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r, echo=FALSE}
+# Step 1.1 load the aoi ####
+load("~/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/8.RData/area_of_interes/aoi_mzmv.RData")
+
+
+# Step 1.2 load the dengue geocoded dataset ####
+load("~/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/8.RData/dengue_dataset/den_mzmv_16_23.RData")
+y <- y |>
+    sf::st_as_sf(coords = c("long", "lat"),
+                 crs = 4326) |>
+    dplyr::filter(ANO == 2023)
+
+
+# Step 1.3 load the aedes agypti dataset ####
+load("~/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/8.RData/aedes_aegypti/aedes_aegypti_mzmv.RData")
+aedes_aegypti_mzmv <- aedes_aegypti_mzmv |>
+    sf::st_as_sf(coords = c("longitude", "latitude"),
+                 crs = 4326)
+
+# Step 2 extract of the aoi ###
+cdmx_hex <- popmex::hdx_pop2023[cdmx_mun, ]
+
+y <- y[cdmx_hex, ]
+
+aedes_aegypti_mzmv <- aedes_aegypti_mzmv[cdmx_hex,]
+mapview::mapview(cdmx_mun,
+                 legend = FALSE,
+                 alpha.regions = 0.1) +
+    mapview::mapview(aedes_aegypti_mzmv,
+                     col.regions = "#63C1A0",
+                     #alpha.regions = 0.1,
+                     layer.name = "Aedes aegypti") +
+    mapview::mapview(y,
+                     col.regions = "#E01A59",
+                     #alpha.regions = 0.1,
+                     layer.name = "Casos Importados de Dengue")
+
+```
+
+
 ## [Hotspots de los casos importados en CDMX]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 

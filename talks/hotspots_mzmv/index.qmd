@@ -471,6 +471,55 @@ DiagrammeR::grViz("digraph {
 ```
 
 
+## [Resultados *Aedes aegypti*]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+::: {layout-ncol=2}
+
+
+![](aedes_aegypti_results.jpg)
+
+![](aedes_aegypti_emsamble.jpg)
+
+:::
+
+
+## [Resultados: Casos Importados de Dengue]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+:::: {.columns}
+
+:::{.column style="width: 50%;font-size: 100%"}
+
+:::
+
+:::{.column style="width: 50%; font-size: 80%"}
+
+:::
+
+
+::::
+
+## [Predicción de *Aedes aegypti* & Casos Importados]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+:::: {.columns}
+
+:::{.column style="width: 50%;font-size: 100%"}
+
+:::
+
+:::{.column style="width: 50%; font-size: 80%"}
+
+:::
+
+
+::::
+
+
 ## [Dios Botic]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 

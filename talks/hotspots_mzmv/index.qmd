@@ -514,100 +514,19 @@ DiagrammeR::grViz("digraph {
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
-<html>
-<head>
-```{=html}
-<style>
-.grid-container-hex {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 5px;
-}
-
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 5px;
-  font-size: 30px;
-  text-align: center;
-}
-</style>
-```
-</head>
-<body>
-<h1>
-</h1>
-<p>
-</p>
-
-::: grid-container-hex
-
-::: grid-item
-*Aedes aegypti*
-:::
-
-::: grid-item
-**Casos Importados**
-:::
-
-::: grid-item
-**Riesgo**
-:::
-
-::: grid-item
-```{r aedes, out.height="550%", out.width="110%"}
+```{r risk, fig.fullwidth=TRUE}
 #| echo: false
 #| output: true
-aedes <- terra::rast("/Users/fdzul/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/11.output/pred_ae_aegypti.tif")
-ggplot2::ggplot() +
-    tidyterra::geom_spatraster(data = aedes,
-                               ggplot2::aes(fill = mean)) +
-    tidyterra::scale_fill_whitebox_c("Probabilidad",
-                                     palette = "muted",
-                                     n.breaks = 10,
-                                     #alpha = 0.5,
-                                     guide = ggplot2::guide_legend(reverse = TRUE)) +
-    cowplot::theme_map()
-
-```
-:::
-
-::: grid-item
-```{r den_impor, out.height="550%", out.width="110%"}
-#| echo: false
-#| output: true
-den <- terra::rast("/Users/fdzul/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/11.output/pred_dengue.tif")
-ggplot2::ggplot() +
-    tidyterra::geom_spatraster(data = den,
-                               ggplot2::aes(fill = mean)) +
-    tidyterra::scale_fill_whitebox_c("Probabilidad",
-                                     palette = "muted",
-                                     n.breaks = 10,
-                                     #alpha = 0.5,
-                                     guide = ggplot2::guide_legend(reverse = TRUE)) +
-    cowplot::theme_map()
-```
-:::
-
-::: grid-item
-```{r risk, echo= FALSE, out.height="550%", out.width="110%"}
 risk <- terra::rast("/Users/fdzul/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/11.output/pred_class_risk.tif")
 
 ggplot2::ggplot() +
     tidyterra::geom_spatraster(data = risk) +
-    ggplot2::facet_wrap(~lyr, ncol = 2) +
     tidyterra::scale_fill_whitebox_d("",
                                      palette = "muted",
                                      guide = ggplot2::guide_legend(reverse = TRUE)) +
     cowplot::theme_map()
 
 ```
-:::
-
-:::
-
-</body>
-</html>
 
 
 

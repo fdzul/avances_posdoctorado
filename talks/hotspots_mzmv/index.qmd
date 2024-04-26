@@ -397,7 +397,7 @@ DiagrammeR::grViz("digraph {
   gee -> worldclim -> bio -> aoi -> scale -> clim_data
 
   }",
-  heigh = "900px",
+  height = "900px",
   width = "400px")
 ```
 
@@ -475,32 +475,12 @@ DiagrammeR::grViz("digraph {
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
-::: {layout-ncol=2}
-
-
-![](aedes_aegypti_results.jpg)
-
-![](aedes_aegypti_emsamble.jpg)
-
-:::
-
+![](aedes_aegypti_emsamble.jpg){fig-align="center"}
 
 ## [Resultados: Casos Importados de Dengue]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
-
-:::: {.columns}
-
-:::{.column style="width: 50%;font-size: 100%"}
-
-:::
-
-:::{.column style="width: 50%; font-size: 80%"}
-
-:::
-
-
-::::
+![](dengue_ensemble.jpg){fig-align="center"}
 
 ## [Predicción de *Aedes aegypti* & Casos Importados]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
@@ -508,12 +488,18 @@ DiagrammeR::grViz("digraph {
 
 :::: {.columns}
 
-:::{.column style="width: 50%;font-size: 100%"}
+:::{.column style="width:50%; font-size:100%"}
 
+*Aedes aegypti*
+
+![](aedes_aegypti_sdm_map.jpg){height=120% width=100% fig-align="center"}
 :::
 
-:::{.column style="width: 50%; font-size: 80%"}
+:::{.column style="width:50%; font-size:100%"}
 
+**Casos Importados de Dengue**
+
+![](dengue_sdm_map.jpg){height=120% width=100% fig-align="center"}
 :::
 
 

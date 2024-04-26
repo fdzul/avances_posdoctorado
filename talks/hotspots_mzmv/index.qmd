@@ -359,7 +359,7 @@ DiagrammeR::grViz("digraph {
   sinave -> denv -> cdmx -> dir -> geo -> den_data
   
 }",heigh = "900px",
-width = "800px")
+width = "400px")
 ```
 
 :::
@@ -398,7 +398,7 @@ DiagrammeR::grViz("digraph {
 
   }",
   heigh = "900px",
-  width = "800px")
+  width = "400px")
 ```
 
 :::

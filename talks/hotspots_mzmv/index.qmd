@@ -269,7 +269,7 @@ a | b
 
 :::: {.columns}
 
-:::{.column style="width: 33.3%;font-size: 100%"}
+:::{.column style="width: 40%;font-size: 100%"}
 
 ```{r}
 #| echo: false
@@ -325,7 +325,7 @@ DiagrammeR::grViz("digraph {
 
 :::
 
-:::{.column style="width: 33.3%;font-size: 100%"}
+:::{.column style="width: 30%;font-size: 100%"}
 
 ```{r}
 #| echo: false
@@ -364,7 +364,7 @@ width = "800px")
 
 :::
 
-:::{.column style="width: 33.3%;font-size: 100%"}
+:::{.column style="width: 30%;font-size: 100%"}
 
 ```{r}
 #| echo: false

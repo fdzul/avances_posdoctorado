@@ -407,6 +407,69 @@ DiagrammeR::grViz("digraph {
 ::::
 
 
+## [Flujograma del Análisis Espacial]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r}
+#| echo: false
+#| output: true
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, 
+  style = filled, 
+  color = grey, 
+  nodesep = .5,
+  fixedsize = true, 
+  width = 2.5] 
+  
+  # edge definition
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  ##### epidemiological data
+  
+  bases [label = 'Bases de Datos',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+  aedes [label = 'Aedes aegypti', fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+  dengue [label = 'Dengue',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+  clim [label = 'Climáticos',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+  
+  samp [label = 'Muestreo Ausencias',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+  ext [label = 'Extraccion de Datos Climáticos',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+  corr [label = 'Multicolinearidad',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+  
+  mod [label = 'model',  fillcolor =  '#E01A59', color = 'white', fontcolor = 'white']
+  
+  # Articulos 
+  thin  [label = 'Thinning',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  cell  [label = 'Cell',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  dist  [label = 'Distancia',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  #
+  
+  val [label = 'Validacion Cruzada v=10',  fillcolor =  'dodgerblue', color = 'white', fontcolor = 'white']
+  
+  # indicadores
+  auc [label = 'AUC',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  boyce [label = 'Boyce',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  tss [label = 'tss max',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  
+  ensemble [label = 'Ensamblaje',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  pred [label = 'Predicción',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  
+  
+  # Bases
+ 
+  bases -> {aedes dengue clim} -> thin -> {cell dist} -> samp
+  samp -> ext -> corr -> mod -> val -> {auc boyce tss} -> ensemble
+  ensemble -> pred
+
+}", heigh = "900px",
+  width = "800px")
+
+```
+
 
 ## [Dios Botic]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">

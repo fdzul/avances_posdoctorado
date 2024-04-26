@@ -167,39 +167,12 @@ mapview::mapview(cdmx_mun,
 ## [Hotspots de los casos importados en CDMX]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
-```{=html}
-<style>
-.grid-container-hotspots {
-  display: grid;
-  grid-template-columns: auto auto;
-  padding: 5px;
-}
 
-.grid-item-hotspots {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 5px;
-  font-size: 30px;
-  text-align: center;
-}
-</style>
-```
-</head>
-<body>
-<h1>
-</h1>
-<p>
-</p>
 
-::: grid-container-hotspots
 
-::: grid-item-hotspots
-```{r hotspots_ageb}
+```{r hotspots_ageb,fig.align='center', out.height="100%", out.width="110%"}
 #| echo: false
 #| output: true
-mapview::mapviewOptions(leafletWidth = 500, 
-                        leafletHeight = 550,
-                        legend = FALSE)
 # Step 1.1 load the aoi ####
 load("~/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/8.RData/area_of_interes/aoi_mzmv.RData")
 
@@ -224,49 +197,6 @@ z_ageb <- denhotspots::point_to_polygons(x = y,
                                          crs = 4326,
                                          dis = "DENV")
 
-# Step 4. Calculate the hotspots ####
-hotspots_ageb <- denhotspots::gihi(x = z_ageb,
-                                  id = c("OBJECTID","CVEGEO","CVE_ENT", "CVE_MUN",  
-                                         "CVE_LOC", "CVE_AGEB","Ambito","Shape_Leng",
-                                         "Shape_Area"), 
-                                  time = "year",
-                                  dis = "DENV",
-                                  gi_hi = "gi",
-                                  alpha = 0.95)
-
-
-
-
-# Step 5. Vizualization of hotspots ####
-mapview::mapview(hotspots_ageb,
-                 zcol = "intensity_gi",
-                 col.regions = viridis::inferno,
-                 layer.name = "Intensidad")
-
-```
-:::
-
-::: grid-item-hotspots
-```{r hotspots_hex}
-#| echo: false
-#| output: true
-mapview::mapviewOptions(leafletWidth = 500, 
-                        leafletHeight = 550,
-                        legend = FALSE)
-
-# Step 1.1 load the aoi ####
-load("~/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/8.RData/area_of_interes/aoi_mzmv.RData")
-
-
-# Step 1.2 load the dengue geocoded dataset ####
-load("~/Dropbox/posdoctorado_INSP/proyectos/risk_mzmv/8.RData/dengue_dataset/den_mzmv_16_23.RData")
-
-# Step 2 extract of the aoi ###
-cdmx_hex <- popmex::hdx_pop2023[mzmv, ]
-
-
-# Step 3. Count the cases by hexagons ####
-library(magrittr)
 z_hex <- denhotspots::point_to_polygons(x = y,
                                     y = cdmx_hex, ##
                                     ids = c("h3","population"), ###
@@ -278,25 +208,55 @@ sf::st_geometry(z_hex) <- "geometry"
 
 
 # Step 4. Calculate the hotspots ####
+hotspots_ageb <- denhotspots::gihi(x = z_ageb,
+                                  id = c("OBJECTID","CVEGEO","CVE_ENT", "CVE_MUN",  
+                                         "CVE_LOC", "CVE_AGEB","Ambito","Shape_Leng",
+                                         "Shape_Area"), 
+                                  time = "year",
+                                  dis = "DENV",
+                                  gi_hi = "gi",
+                                  alpha = 0.95)
+
 hotspots_hex <- denhotspots::gihi(x = z_hex,
                                   id = c("h3","population"), 
                                   time = "year",
                                   dis = "DENV",
                                   gi_hi = "gi",
                                   alpha = 0.95)
+
+
 # Step 5. Vizualization of hotspots ####
-mapview::mapview(hotspots_hex,
-                 zcol = "intensity_gi",
-                 col.regions = viridis::magma,
-                 layer.name = "Intensidad")
+a <- hotspots_ageb |>
+    denhotspots::staticmap_intensity(pal = rcartocolor::carto_pal,
+                                     pal_name = TRUE,
+                                     name = "OrYel",
+                                     breaks = 1,
+                                     dir_pal = -1,
+                                     x_leg = 0.7,
+                                     y_leg = 0.05,
+                                     ageb = TRUE) +
+    ggplot2::geom_sf(data = mzmv_mun,
+                     fill = NA,
+                     lwd = 0.05)
+
+b <- hotspots_hex |>
+    denhotspots::staticmap_intensity(pal = rcartocolor::carto_pal,
+                                     pal_name = TRUE,
+                                     name = "OrYel",
+                                     breaks = 1,
+                                     dir_pal = -1,
+                                     x_leg = 0.4,
+                                     y_leg = 0.07,
+                                     ageb = TRUE) +
+    ggplot2::geom_sf(data = mzmv,
+                     fill = NA,
+                     lwd = 0.05)
+
+library(patchwork)
+
+a | b
+
 ```
-:::
-
-:::
-
-</body>
-</html>
-
 
 
 ## [Origen-Destino de la Transmisión no Autóctona de CDMX]{style="color:#003300;"}

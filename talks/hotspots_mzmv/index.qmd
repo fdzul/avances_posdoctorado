@@ -485,6 +485,8 @@ DiagrammeR::grViz("digraph {
 ## [Predicción de *Aedes aegypti* & Casos Importados]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+<br> 
+
 
 :::: {.columns}
 
@@ -505,6 +507,8 @@ DiagrammeR::grViz("digraph {
 
 ::::
 
+
+<p>Los puntos representan la presencia de *Ae. aegypti* y la presencia de casos importados de Dengue.</p>
 
 ## [Dios Botic]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">

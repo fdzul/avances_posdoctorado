@@ -264,7 +264,7 @@ a | b
 
 ![](od_map.png)
 
-## [Dios Botic]{style="color:#003300;"}
+## [Bases de Datos]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 :::: {.columns}
@@ -320,8 +320,7 @@ DiagrammeR::grViz("digraph {
   bases -> indre -> conabio -> mosq -> veim
   {ar veim} -> aedes
  
-}", heigh = "700px",
-width = "800px")
+}", height = "900px")
 ```
 
 :::
@@ -359,7 +358,7 @@ DiagrammeR::grViz("digraph {
   
   sinave -> denv -> cdmx -> dir -> geo -> den_data
   
-}",heigh = "700px",
+}",heigh = "900px",
 width = "800px")
 ```
 
@@ -398,7 +397,7 @@ DiagrammeR::grViz("digraph {
   gee -> worldclim -> bio -> aoi -> scale -> clim_data
 
   }",
-  heigh = "700px",
+  heigh = "900px",
   width = "800px")
 ```
 

@@ -70,7 +70,7 @@ execute:
 | 21 Puebla|
 | 25 Sinaloa|
 | 26 Sonora|
-| [28 Tamaulipas](https://helpful-pegasus-ba8bb9.netlify.app/)|
+| [28 Tamaulipas](https://zingy-tarsier-e2570c.netlify.app)|
 :::
 
 :::{.column style="width: 33.3%;font-size: 90%"}

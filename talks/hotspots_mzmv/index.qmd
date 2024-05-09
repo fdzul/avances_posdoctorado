@@ -30,8 +30,8 @@ execute:
 <h3>Co-directora </h3>
 <h3>Dr. Victoria Pando</h3>
 <h3> Create:   2024-04-24</h3>
-<h3> Updated:  2024-04-25</h3>
-<h3> Compiled: 2024-02-25</h3>
+<h3> Updated:  2024-05-08</h3>
+<h3> Compiled: 2024-05-08</h3>
 <br> 
 
 ![](odmap.png){.absolute top="300" left="700" width="1000"}
@@ -62,15 +62,15 @@ execute:
 :::{.column style="width: 33.3%;font-size: 90%"}
 |Estados a Trabajar|
 |---	|
-| 06 Colima|
-| 09 Ciudad de México|
+| [06 Colima](https://silver-moxie-30857b.netlify.app)|
+| [09 Ciudad de México](https://glowing-conkies-a3b760.netlify.app/talks/hotspots_mzmv/)|
 | 11 Guanajuato|
 | 18 Nayarit|
 | 19 Nuevo León|
 | 21 Puebla|
 | 25 Sinaloa|
 | 26 Sonora|
-| 28 Tamaulipas|
+| [28 Tamaulipas](https://helpful-pegasus-ba8bb9.netlify.app/)|
 :::
 
 :::{.column style="width: 33.3%;font-size: 90%"}

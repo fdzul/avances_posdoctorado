@@ -65,10 +65,10 @@ execute:
 | [06 Colima](https://silver-moxie-30857b.netlify.app)|
 | [09 Ciudad de México](https://glowing-conkies-a3b760.netlify.app/talks/hotspots_mzmv/)|
 | 11 Guanajuato|
-| 18 Nayarit|
+| [18 Nayarit](https://idyllic-granita-6918af.netlify.app/)|
 | 19 Nuevo León|
 | 21 Puebla|
-| 25 Sinaloa|
+| 25 [Sinaloa](https://cosmic-dusk-10e889.netlify.app)|
 | 26 Sonora|
 | [28 Tamaulipas](https://zingy-tarsier-e2570c.netlify.app)|
 :::

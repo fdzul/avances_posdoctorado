@@ -26,7 +26,7 @@ execute:
 <h3>[Dr. Felipe Dzul Manzanilla]{style="color:#620002;"} </h3>
 <br> 
 <h3>Director </h3>
-<h3>Dr. Héctor Gómez-Dantés</h3>
+<h3>[Dr. Héctor Gómez-Dantés]{style="color:#620002;"}</h3>
 <h3>Co-directora </h3>
 <h3>Dr. Victoria Pando</h3>
 <h3> Date:   2024-07-27</h3>

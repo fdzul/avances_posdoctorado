@@ -1,6 +1,4 @@
 # Step 1. load dengue dataset the current week ####
-
-
 x_2023 <- data.table::fread("/Users/fdzul/Library/CloudStorage/OneDrive-Personal/datasets/DGE/denv/2023/DENGUE2_.txt", 
                        header = TRUE, 
                        quote = "", 
@@ -31,7 +29,7 @@ y <- den2008_2015 |>
     dplyr::select(ANO, SEROTIPO, n)
 
 table(y$SEROTIPO_PCR)
-
+sum(y$n)
 
 x <- den2016_2023 |>
     dplyr::filter(ESTATUS_CASO %in% c(2)) |>
@@ -43,11 +41,16 @@ x <- den2016_2023 |>
     dplyr::select(ANO, SEROTIPO, n)
 table(x$DENGUE_SER_TRIPLEX)
 table(x$SEROTIPO)
+
+
+
 xy <- dplyr::bind_rows(y, x) |>
     dplyr::mutate(serotype = dplyr::case_when(SEROTIPO == 1 ~ "Serotipo 1",
                                               SEROTIPO == 2 ~ "Serotipo 2",
                                               SEROTIPO == 3 ~ "Serotipo 3",
                                               SEROTIPO == 4 ~ "Serotipo 4"))
+
+
 
 
 imp_den <- ggplot2::ggplot() +

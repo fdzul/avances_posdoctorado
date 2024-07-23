@@ -1,0 +1,307 @@
+---
+format: 
+  revealjs:
+    #theme: ["theme/q-theme.scss"]
+    slide-number: c/t
+    logo: "https://www.insp.mx/assets/images/insp.png"
+    footer: "[github.com/fdzul](https://github.com/fdzul)"
+    code-copy: true
+    center-title-slide: false
+highlight-style: a11y
+code-link: true
+height: 1080
+width: 1600
+execute: 
+  eval: true
+  echo: true
+---
+
+<h1>Análisis Espacial del Dengue<br>en México</h1>
+
+<h2> </h2>
+
+<hr>
+<br> 
+<h3>Alumno</h3>
+<h3>Dr. Felipe Dzul Manzanilla </h3>
+<br> 
+<h3>Director </h3>
+<h3>Dr. Héctor Gómez-Dantés</h3>
+<h3>Co-directora </h3>
+<h3>Dr. Victoria Pando</h3>
+<h3> Date:   2024-07-27</h3>
+
+<br> 
+
+![](odmap.png){.absolute top="300" left="700" width="1000"}
+
+
+## [Hipótesis & Objetivo General]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+&nbsp;
+
+### Hipótesis
+
+La concordancia espacial entre el [binomio hotspots de la transmisión persistente-hotspots de la abundancia persistente del vector](), y el [trinomio cadenas de transmisión-hotspots de la abundancia-mapas de calor](), proporcionan un marco de estratificación para la [identificación de los escenarios escenarios epidemiológicos u operativos]() que permiten desarrollar un modelo estratégico de focalización para el control integrado de las arbovirosis
+
+&nbsp;
+
+### Meta
+
+[Desarrollar un modelo estratégico de focalización del dengue en México.]()
+
+&nbsp;
+
+### Objetivo General
+
+[Realizar el Análisis Espacial de las Arbovirosis en México.]()
+
+
+## [Objetivos Específicos]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+&nbsp;
+
+[**1. Identificar los hotspots de la transmisión persistente de las arbovirosis en localidades prioritarias.**]{style="color:#620002;"}
+
+[**2. Identificar los hotspots de abundancia persistente del vector en localidades prioritarias.**]{style="color:#620002;"}
+
+[**3. Determinar la concordancia espacial entre los hotspots de la transmisión persistente y los hotspots de abundancia persistente del vector en las localidades prioritarias.**]{style="color:#620002;"}
+
+[**4. Identificar las cadenas de transmisión activa de las arbovirosis en localidades prioritarias.**]{style="color:#003300;"}
+
+[**5. Identificar las áreas con mayor concentración de transmisión activa (mapas de calor) en las localidades prioritarias.**]{style="color:#003300;"}
+
+[**6. Identificar los hotspots de abundancia reciente del vector en localidades prioritarias.**]{style="color:#003300;"}
+
+[**7. Determinar la concordancia espacial entre las cadenas de transmisión, lo mapas de calor y los hotspots de abundancia reciente del vector en las localidades prioritarias.**]{style="color:#003300;"}
+
+[8. Desarrollar un modelo estratégico de focalización del dengue en las localidades prioritarias.]()
+
+## [Flujograma del Análisis Espacial de la Transmisión del Dengue]{.r-fit-text style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+:::: {.columns}
+
+::: {.column style="width: 50%"}
+```{r, dpi = 300, echo=FALSE, out.width='100%', fig.align ="center"}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, 
+  style = filled, 
+  color = grey, 
+  nodesep = .5,
+  fixedsize = true, 
+  width = 2.5] 
+  
+  # edge definition
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  ##### epidemiological data
+  
+  epi [label = 'Vigilancia Epidemiológica',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
+  data_historic [label = 'Transmision Persistente',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_datos_actuales [label = 'Transmisión Reciente',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_acumulados [label = 'Transmisión Reciente',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_trans_activa [label = 'Transmisión Activa',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  
+  ##### Spatial Data
+  
+  areal [label = 'Areal Data',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+  pp_data [label = 'Point Pattern Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  
+  
+ 
+ # Análisis 
+ hotspots [label = 'Hotspots Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ cadenas [label = 'Cadenas de Transmisión',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ cluster_ana [label = 'Cluster Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ lgcp [label = 'Spatial LGCP',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ 
+ heatmap [label = 'Mapas de Calor',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ 
+ 
+ # software
+ 
+ geoda [label = 'Geoda',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ cluster_s [label = 'ClusterSeer',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ satscan [label = 'SatScan',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ 
+ r_rstudio [label = 'R & RStudio',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+
+  denhotspot [label = 'denhotspots Package',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white'] 
+ 
+ ##### define the relation
+ 
+ epi -> {data_historic  data_datos_actuales}
+ data_historic -> areal -> hotspots -> geoda
+ data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas lgcp cluster_ana heatmap}
+ cadenas -> cluster_s
+ cluster_ana -> satscan
+ 
+ {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot
+ 
+}", heigh = "700px",
+width = "800px")
+
+```
+:::
+
+::: {.column style="width: 50%"}
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, 
+  style = filled, 
+  color = grey, 
+  nodesep = .5,
+  fixedsize = true, 
+  width = 2.5] 
+  
+  # edge definition
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  ##### entomological data
+  
+  ento [label = 'Vigilancia Entomológica',  fillcolor =  '#FF5A5F', color = 'white', fontcolor = 'white']
+  data_historic [label = 'Datos Históricos',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  years  [label = '2014-2019',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_datos_actuales [label = 'Datos del Año Actual',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_acumulados [label = 'Datos hasta la Semana Actual',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_trans_activa [label = 'Semana Actual',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  
+  ##### Spatial Data
+  
+  geo_data [label = 'Geoestatistical Data',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+ 
+  
+ 
+ # Análisis 
+ spde [label = 'SPDE-INLA',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ hotspots [label = 'Hotspots Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ #prediction [label = 'Predicción Espacial de Huevos',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ 
+ # entomological study
+ ovitraps [label = 'Ovitrampas',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  enc_ver [label = 'Encuesta-Verificación',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  adults [label = 'Colecta de Adultos',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ 
+ 
+ # software
+ r_rstudio [label = 'R & RStudio',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ deneggs [label = 'deneggs Package',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white'] 
+ 
+ 
+ 
+ 
+ ##### define the relation
+ 
+ 
+ ento -> {ovitraps  enc_ver adults} 
+ 
+ {ovitraps adults} -> geo_data -> {data_historic data_datos_actuales}
+ data_historic -> years
+ 
+ data_datos_actuales -> {data_acumulados data_trans_activa}
+ 
+ {years data_acumulados data_trans_activa} ->spde -> hotspots
+ 
+ {hotspots} -> r_rstudio -> deneggs
+ 
+}", heigh = "800px",
+width = "800px")
+
+```
+
+:::
+
+::::
+
+
+## [Desarrollo Conceptual del **Modelo Estratégico de Focalización del Dengue**]{.r-fit-text style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+:::: {.columns}
+
+::: {.column style="width: 50%"}
+Concepto
+
+![](https://github.com/fdzul/spatial_analysis_dengue_R_2024_talks/blob/main/talks/mia/transmision_persistente.jpg?raw=true){.absolute right="800" height="815"}
+:::
+
+:::{.column style="width: 50%"}
+Mapa de riesgo
+<img src = "https://github.com/fdzul/spatial_analysis_dengue_R_2024_talks/blob/main/talks/spatial_analysis_dengue/fig/map_risk_guadalajara.jpg?raw=true">
+:::
+
+::::
+
+## [Definición de los Escenarios Operativos ó Epidemiológicos]{.r-fit-text style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+:::: {.columns}
+
+::: {.column style="width: 40%;font-size: 100%"}
+&nbsp;
+
+<span style="color:#F44B1FFF;">Riesgo Muy Alto de Transmisión.</span> Hotposts de casos + hotspots del vector.
+
+&nbsp;
+
+<span style="color:#FF9000FF;">Riesgo Alto de Transmisión.</span> Hotspots de transmisión.
+
+&nbsp;
+
+<span style="color:gold;">Riesgo Medio de Transmisión.</span>Hotspots del vector.
+
+&nbsp;
+
+<span style="color:#00F293FF;">Riesgo Bajo de Transmisión.</span>Sin hotspots de transmisión o hotspots del vector.
+
+:::
+
+::: {.column style="width: 60%"}
+```{r risk_merida2}
+#| fig-width: 10
+#| fig-height: 10
+#| echo: false
+# Step 1. calculate the risk ####
+risk <- denhotspots::risk_ageb(betas = denmex::eggs_betas_31_yucatan,
+                               hotspots = denmex::den_hotspots,
+                               intensity_perc = 25,
+                               locality = "Mérida",
+                               cve_edo = "31")
+
+# Step 2. map ####
+denhotspots::map_risk(risk = risk,
+                      staticmap = TRUE)
+```
+:::
+
+::::
+
+
+
+## [Dios Botic]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+-   ***Bio*** : [https://fdzul.github.io/web_site_fadm/]()
+
+-   ***email*** : [felipe.dzul.m\@gmail.com]()
+
+-   ***celular*** : [9999580167]()
+
+-   ***slide***: [link]()
+
+

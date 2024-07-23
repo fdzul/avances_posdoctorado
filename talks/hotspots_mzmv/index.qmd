@@ -30,8 +30,8 @@ execute:
 <h3>Co-directora </h3>
 <h3>Dr. Victoria Pando</h3>
 <h3> Create:   2024-04-24</h3>
-<h3> Updated:  2024-05-08</h3>
-<h3> Compiled: 2024-05-08</h3>
+<h3> Updated:  2024-05-13</h3>
+<h3> Compiled: 2024-05-13</h3>
 <br> 
 
 ![](odmap.png){.absolute top="300" left="700" width="1000"}
@@ -64,12 +64,12 @@ execute:
 |---	|
 | [06 Colima](https://silver-moxie-30857b.netlify.app)|
 | [09 Ciudad de México](https://glowing-conkies-a3b760.netlify.app/talks/hotspots_mzmv/)|
-| 11 Guanajuato|
+| [11 Guanajuato](https://sparkly-concha-17d36d.netlify.app)|
 | [18 Nayarit](https://idyllic-granita-6918af.netlify.app/)|
 | 19 Nuevo León|
 | 21 Puebla|
-| 25 [Sinaloa](https://cosmic-dusk-10e889.netlify.app)|
-| 26 Sonora|
+| [25 Sinaloa](https://cosmic-dusk-10e889.netlify.app)|
+| [26 Sonora](https://soft-donut-e34403.netlify.app)|
 | [28 Tamaulipas](https://zingy-tarsier-e2570c.netlify.app)|
 :::
 
@@ -77,11 +77,11 @@ execute:
 |Estados Pendientes|
 |---	|
 | 01 Aguascalientes |
-| 02 Baja California |
-| 03 Baja California Sur|
+| [02 Baja California](https://dazzling-taffy-ac0fd2.netlify.app) |
+| [03 Baja California Sur](https://fascinating-youtiao-a1f6f7.netlify.app)|
 | 05 Coahuila|
 | 08 Chihuahua|
-| 10 Durango|
+| 10 [Durango](https://preeminent-nougat-6307ee.netlify.app)|
 | 13 Hidalgo|
 | 15 Estado de México|
 | 22 Queretaro|
@@ -539,4 +539,4 @@ ggplot2::ggplot() +
 
 -   ***celular*** : [9999580167]()
 
--   ***slide***: [link](https://glowing-conkies-a3b760.netlify.app/talks/hotspots_mzmv/#)
+-   ***slide***: [link](https://astonishing-torrone-4d3c22.netlify.app/talks/hotspots_mzmv/#/)

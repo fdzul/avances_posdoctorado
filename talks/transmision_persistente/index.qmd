@@ -16,14 +16,14 @@ execute:
   echo: true
 ---
 
-<h1>Análisis Espacial del Dengue<br>en México</h1>
+<h1>[Análisis Espacial del Dengue]{style="color:#003300;"}<br>en México</h1>
 
 <h2> </h2>
 
 <hr>
 <br> 
 <h3>Alumno</h3>
-<h3>Dr. Felipe Dzul Manzanilla </h3>
+<h3>[Dr. Felipe Dzul Manzanilla]{style="color:#620002;"} </h3>
 <br> 
 <h3>Director </h3>
 <h3>Dr. Héctor Gómez-Dantés</h3>
@@ -293,6 +293,10 @@ denhotspots::map_risk(risk = risk,
 
 
 
+## [Definición de los Escenarios Operativos ó Epidemiológicos]{.r-fit-text style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
 ## [Dios Botic]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
@@ -302,6 +306,6 @@ denhotspots::map_risk(risk = risk,
 
 -   ***celular*** : [9999580167]()
 
--   ***slide***: [link]()
+-   ***slide***: [link](https://glowing-conkies-a3b760.netlify.app/talks/transmision_persistente/#/)
 
 

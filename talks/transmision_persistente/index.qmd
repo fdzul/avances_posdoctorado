@@ -302,9 +302,71 @@ denhotspots::map_risk(risk = risk,
 
 | Date | Reporte | Estados |
 |------------------|:----------------:|:----------------:|
-|  2024-02-14      | Primer reporte   |      12          |
-|  2024-05-13      | Segundo reporte  |      22          |
-|  2024-07-27      | Primer reporte.  |      32          |
+|  [2024-02-14](https://musical-fox-22668c.netlify.app/talks/persistent_transmission/#/transmisión-persistente-abundancia-persistente-avances)      | Primer reporte   |      12          |
+|  [2024-05-13](https://astonishing-torrone-4d3c22.netlify.app/talks/hotspots_mzmv/#/transmisión-persistente-abundancia-persistente-avances)      | Segundo reporte  |      22          |
+|  [2024-07-27](https://glowing-conkies-a3b760.netlify.app/talks/transmision_persistente/#/)      | Primer reporte.  |      32          |
+
+
+
+## [Avances de la Identificación de Escenarios Epidemiológicos]{.r-fit-text style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+
+:::: {.columns}
+
+::: {.column style="width: 33.3%; font-size: 90%"}
+|Estados Trabajados|
+|------------------|
+| [01 Aguascalientes](https://dashing-manatee-5aedb8.netlify.app)          | 
+| [02 Baja California](https://dazzling-taffy-ac0fd2.netlify.app)          |
+| [03 Baja California Sur](https://fascinating-youtiao-a1f6f7.netlify.app) |
+| [04 Campeche](https://phenomenal-hotteok-02e188.netlify.app)             | 
+| [05 Coahuila](https://strong-kelpie-ecc3ea.netlify.app)                  |
+| [06 Colima](https://silver-moxie-30857b.netlify.app)                     |
+| [07 Chiapas](https://adorable-tiramisu-303de1.netlify.app)               |
+| 08 Chihuahua                                                             |
+| 09 Ciudad de México                                                      |
+| [10 Durango](https://preeminent-nougat-6307ee.netlify.app)               |
+| [11 Guanajuato](https://sparkly-concha-17d36d.netlify.app)               |
+| [12 Guerrero](https://astounding-squirrel-94dd18.netlify.app)            |
+
+:::
+
+::: {.column style="width: 33.3%; font-size: 90%"}
+|Estados Trabajados|
+|------------------|
+|[13 Hidalgo](https://incredible-arithmetic-3dc5ed.netlify.app)            | 
+| [14 Jalisco](https://heartfelt-fudge-936865.netlify.app)                 |
+| [15 Estado de México](https://inquisitive-tartufo-8d5181.netlify.app)    |
+| [16 Michoacán](https://fabulous-mermaid-31ea6a.netlify.app)              |
+| [17 Morelos](https://glistening-griffin-b8023f.netlify.app)              |
+| [18 Nayarit](https://idyllic-granita-6918af.netlify.app)                 |
+| [19 Nuevo León](https://starlit-lolly-ad7d14.netlify.app)                |
+| [20 Oaxaca](https://merry-figolla-08f5bf.netlify.app)                    |
+| [21 Puebla](https://snazzy-figolla-e17977.netlify.app/#)                 |
+| 22 Queretaro |
+
+:::
+
+::: {.column style="width: 33.3%; font-size: 90%"}
+|Estados Trabajados|
+|------------------|
+| [23 Quintana Roo](https://helpful-pegasus-ba8bb9.netlify.app)            |
+| [24 San Luis Potosí](https://wonderful-belekoy-db9c08.netlify.app)       |
+| [25 Sinaloa](https://cosmic-dusk-10e889.netlify.app)                     |
+| [26 Sonora](https://soft-donut-e34403.netlify.app)                       |
+| [27 Tabasco](https://capable-torrone-6eae7f.netlify.app)                 |
+| [28 Tamaulipas](https://zingy-tarsier-e2570c.netlify.app)                |
+| 29 Tlaxcala                                                              |
+| [30 Veracruz](https://zippy-bunny-bdd8c7.netlify.app)                    |
+| [31 Yucatán](https://keen-dango-d1cd7e.netlify.app)                      |
+| [32 Zacatecas](https://mellifluous-banoffee-e28771.netlify.app)          |  
+
+:::
+
+::::
+
 
 
 ## [Dios Botic]{style="color:#003300;"}

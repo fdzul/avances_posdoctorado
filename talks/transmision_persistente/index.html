@@ -384,15 +384,15 @@ Date: 2024-07-27
 <div class="column" style="width: 50%">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="htmlwidget-63246e374440228efc03" style="width:800px;height:700px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-63246e374440228efc03">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### epidemiological data\n  \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Transmision Persistente\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Transmisión Reciente\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Transmisión Reciente\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Transmisión Activa\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  areal [label = \"Areal Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  pp_data [label = \"Point Pattern Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n  \n \n # Análisis \n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cadenas [label = \"Cadenas de Transmisión\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cluster_ana [label = \"Cluster Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n lgcp [label = \"Spatial LGCP\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n heatmap [label = \"Mapas de Calor\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n \n geoda [label = \"Geoda\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n cluster_s [label = \"ClusterSeer\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n satscan [label = \"SatScan\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n \n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  denhotspot [label = \"denhotspots Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n ##### define the relation\n \n epi -> {data_historic  data_datos_actuales}\n data_historic -> areal -> hotspots -> geoda\n data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas lgcp cluster_ana heatmap}\n cadenas -> cluster_s\n cluster_ana -> satscan\n \n {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a3aca94d250d7784bf2b" style="width:800px;height:700px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a3aca94d250d7784bf2b">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### epidemiological data\n  \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Transmision Persistente\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Transmisión Reciente\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Transmisión Reciente\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Transmisión Activa\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  areal [label = \"Areal Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  pp_data [label = \"Point Pattern Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n  \n \n # Análisis \n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cadenas [label = \"Cadenas de Transmisión\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cluster_ana [label = \"Cluster Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n lgcp [label = \"Spatial LGCP\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n heatmap [label = \"Mapas de Calor\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n \n geoda [label = \"Geoda\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n cluster_s [label = \"ClusterSeer\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n satscan [label = \"SatScan\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n \n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  denhotspot [label = \"denhotspots Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n ##### define the relation\n \n epi -> {data_historic  data_datos_actuales}\n data_historic -> areal -> hotspots -> geoda\n data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas lgcp cluster_ana heatmap}\n cadenas -> cluster_s\n cluster_ana -> satscan\n \n {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div><div class="column" style="width: 50%">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="htmlwidget-ef69f394dbd98a188acd" style="width:800px;height:800px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ef69f394dbd98a188acd">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### entomological data\n  \n  ento [label = \"Vigilancia Entomológica\",  fillcolor =  \"#FF5A5F\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  years  [label = \"2014-2019\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos del Año Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos hasta la Semana Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Semana Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  geo_data [label = \"Geoestatistical Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n  \n \n # Análisis \n spde [label = \"SPDE-INLA\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n #prediction [label = \"Predicción Espacial de Huevos\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n # entomological study\n ovitraps [label = \"Ovitrampas\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  enc_ver [label = \"Encuesta-Verificación\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  adults [label = \"Colecta de Adultos\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n deneggs [label = \"deneggs Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n \n \n \n ##### define the relation\n \n \n ento -> {ovitraps  enc_ver adults} \n \n {ovitraps adults} -> geo_data -> {data_historic data_datos_actuales}\n data_historic -> years\n \n data_datos_actuales -> {data_acumulados data_trans_activa}\n \n {years data_acumulados data_trans_activa} ->spde -> hotspots\n \n {hotspots} -> r_rstudio -> deneggs\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-457920cbacb91fd45597" style="width:800px;height:800px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-457920cbacb91fd45597">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### entomological data\n  \n  ento [label = \"Vigilancia Entomológica\",  fillcolor =  \"#FF5A5F\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  years  [label = \"2014-2019\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos del Año Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos hasta la Semana Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Semana Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  geo_data [label = \"Geoestatistical Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n  \n \n # Análisis \n spde [label = \"SPDE-INLA\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n #prediction [label = \"Predicción Espacial de Huevos\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n # entomological study\n ovitraps [label = \"Ovitrampas\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  enc_ver [label = \"Encuesta-Verificación\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  adults [label = \"Colecta de Adultos\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n deneggs [label = \"deneggs Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n \n \n \n ##### define the relation\n \n \n ento -> {ovitraps  enc_ver adults} \n \n {ovitraps adults} -> geo_data -> {data_historic data_datos_actuales}\n data_historic -> years\n \n data_datos_actuales -> {data_acumulados data_trans_activa}\n \n {years data_acumulados data_trans_activa} ->spde -> hotspots\n \n {hotspots} -> r_rstudio -> deneggs\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -442,22 +442,147 @@ Date: 2024-07-27
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>2024-02-14</td>
+<td><a href="https://musical-fox-22668c.netlify.app/talks/persistent_transmission/#/transmisi%C3%B3n-persistente-abundancia-persistente-avances">2024-02-14</a></td>
 <td style="text-align: center;">Primer reporte</td>
 <td style="text-align: center;">12</td>
 </tr>
 <tr class="even">
-<td>2024-05-13</td>
+<td><a href="https://astonishing-torrone-4d3c22.netlify.app/talks/hotspots_mzmv/#/transmisi%C3%B3n-persistente-abundancia-persistente-avances">2024-05-13</a></td>
 <td style="text-align: center;">Segundo reporte</td>
 <td style="text-align: center;">22</td>
 </tr>
 <tr class="odd">
-<td>2024-07-27</td>
+<td><a href="https://glowing-conkies-a3b760.netlify.app/talks/transmision_persistente/#/">2024-07-27</a></td>
 <td style="text-align: center;">Primer reporte.</td>
 <td style="text-align: center;">32</td>
 </tr>
 </tbody>
-</table></section><section id="dios-botic" class="slide level2"><h2><span style="color:#003300;">Dios Botic</span></h2>
+</table></section><section id="avances-de-la-identificación-de-escenarios-epidemiológicos-1" class="slide level2"><h2><span class="r-fit-text" style="color:#003300;">Avances de la Identificación de Escenarios Epidemiológicos</span></h2>
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+<div class="columns">
+<div class="column" style="width: 33.3%; font-size: 90%">
+<table>
+<thead><tr class="header">
+<th>Estados Trabajados</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://dashing-manatee-5aedb8.netlify.app">01 Aguascalientes</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://dazzling-taffy-ac0fd2.netlify.app">02 Baja California</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://fascinating-youtiao-a1f6f7.netlify.app">03 Baja California Sur</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://phenomenal-hotteok-02e188.netlify.app">04 Campeche</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://strong-kelpie-ecc3ea.netlify.app">05 Coahuila</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://silver-moxie-30857b.netlify.app">06 Colima</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://adorable-tiramisu-303de1.netlify.app">07 Chiapas</a></td>
+</tr>
+<tr class="even">
+<td>08 Chihuahua</td>
+</tr>
+<tr class="odd">
+<td>09 Ciudad de México</td>
+</tr>
+<tr class="even">
+<td><a href="https://preeminent-nougat-6307ee.netlify.app">10 Durango</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://sparkly-concha-17d36d.netlify.app">11 Guanajuato</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://astounding-squirrel-94dd18.netlify.app">12 Guerrero</a></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width: 33.3%; font-size: 90%">
+<table>
+<thead><tr class="header">
+<th>Estados Trabajados</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://incredible-arithmetic-3dc5ed.netlify.app">13 Hidalgo</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://heartfelt-fudge-936865.netlify.app">14 Jalisco</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://inquisitive-tartufo-8d5181.netlify.app">15 Estado de México</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://fabulous-mermaid-31ea6a.netlify.app">16 Michoacán</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://glistening-griffin-b8023f.netlify.app">17 Morelos</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://idyllic-granita-6918af.netlify.app">18 Nayarit</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://starlit-lolly-ad7d14.netlify.app">19 Nuevo León</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://merry-figolla-08f5bf.netlify.app">20 Oaxaca</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://snazzy-figolla-e17977.netlify.app/#">21 Puebla</a></td>
+</tr>
+<tr class="even">
+<td>22 Queretaro</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width: 33.3%; font-size: 90%">
+<table>
+<thead><tr class="header">
+<th>Estados Trabajados</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://helpful-pegasus-ba8bb9.netlify.app">23 Quintana Roo</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://wonderful-belekoy-db9c08.netlify.app">24 San Luis Potosí</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://cosmic-dusk-10e889.netlify.app">25 Sinaloa</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://soft-donut-e34403.netlify.app">26 Sonora</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://capable-torrone-6eae7f.netlify.app">27 Tabasco</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://zingy-tarsier-e2570c.netlify.app">28 Tamaulipas</a></td>
+</tr>
+<tr class="odd">
+<td>29 Tlaxcala</td>
+</tr>
+<tr class="even">
+<td><a href="https://zippy-bunny-bdd8c7.netlify.app">30 Veracruz</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://keen-dango-d1cd7e.netlify.app">31 Yucatán</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://mellifluous-banoffee-e28771.netlify.app">32 Zacatecas</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section><section id="dios-botic" class="slide level2"><h2><span style="color:#003300;">Dios Botic</span></h2>
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 <ul>
 <li><p><strong><em>Bio</em></strong> : <a href="">https://fdzul.github.io/web_site_fadm/</a></p></li>

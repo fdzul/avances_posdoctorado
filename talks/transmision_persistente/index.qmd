@@ -345,15 +345,15 @@ denhotspots::map_risk(risk = risk,
 | [19 Nuevo León](https://starlit-lolly-ad7d14.netlify.app)                |
 | [20 Oaxaca](https://merry-figolla-08f5bf.netlify.app)                    |
 | [21 Puebla](https://snazzy-figolla-e17977.netlify.app/#)                 |
-| 22 Queretaro |
+| 22 Queretaro                                                             |
+| [23 Quintana Roo](https://helpful-pegasus-ba8bb9.netlify.app)            |
+| [24 San Luis Potosí](https://wonderful-belekoy-db9c08.netlify.app)       |
 
 :::
 
 ::: {.column style="width: 33.3%; font-size: 90%"}
 |Estados Trabajados|
 |------------------|
-| [23 Quintana Roo](https://helpful-pegasus-ba8bb9.netlify.app)            |
-| [24 San Luis Potosí](https://wonderful-belekoy-db9c08.netlify.app)       |
 | [25 Sinaloa](https://cosmic-dusk-10e889.netlify.app)                     |
 | [26 Sonora](https://soft-donut-e34403.netlify.app)                       |
 | [27 Tabasco](https://capable-torrone-6eae7f.netlify.app)                 |
@@ -361,7 +361,8 @@ denhotspots::map_risk(risk = risk,
 | 29 Tlaxcala                                                              |
 | [30 Veracruz](https://zippy-bunny-bdd8c7.netlify.app)                    |
 | [31 Yucatán](https://keen-dango-d1cd7e.netlify.app)                      |
-| [32 Zacatecas](https://mellifluous-banoffee-e28771.netlify.app)          |  
+| [32 Zacatecas](https://mellifluous-banoffee-e28771.netlify.app)          | : 
+
 
 :::
 

@@ -312,7 +312,6 @@ denhotspots::map_risk(risk = risk,
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
-
 :::: {.columns}
 
 ::: {.column style="width: 33.3%; font-size: 90%"}
@@ -368,6 +367,57 @@ denhotspots::map_risk(risk = risk,
 
 ::::
 
+
+## [Avances de la Identificación de Escenarios Epidemiológicos]{.r-fit-text style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+| Estado                                                                   | Hotspots del Dengue | Hotspots del Vector | Escenarios |
+|------------------|:----------------:|:----------------:|:----------------:|
+| [01 Aguascalientes](https://dashing-manatee-5aedb8.netlify.app)          |          0          |          1          |     0      |
+| [02 Baja California](https://dazzling-taffy-ac0fd2.netlify.app)          |          1          |          2          |     1      |
+| [03 Baja California Sur](https://fascinating-youtiao-a1f6f7.netlify.app) |          3          |          3          |     3      |
+| [04 Campeche](https://phenomenal-hotteok-02e188.netlify.app)             |          3          |          3          |     3      |
+| [05 Coahuila](https://strong-kelpie-ecc3ea.netlify.app)                  |          2          |          5          |     2      |
+| [06 Colima](https://silver-moxie-30857b.netlify.app)                     |          4          |          4          |     3      |
+| [07 Chiapas](https://adorable-tiramisu-303de1.netlify.app)               |          9          |          2          |     2      |
+| 08 Chihuahua                                                             |          0          |          0          |     0      |
+| 09 Ciudad de México                                                      |          1          |          1          |     1      |
+| [10 Durango](https://preeminent-nougat-6307ee.netlify.app)               |          1          |          3          |     1      |
+| [11 Guanajuato](https://sparkly-concha-17d36d.netlify.app)               |          1          |          2          |     0      |
+| [12 Guerrero](https://astounding-squirrel-94dd18.netlify.app)            |          4          |          4          |     4      |
+
+
+## [Avances de la Identificación de Escenarios Epidemiológicos]{.r-fit-text style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+| Estado                                                                   | Hotspots del Dengue | Hotspots del Vector | Escenarios |
+|------------------|:----------------:|:----------------:|:----------------:|
+| [13 Hidalgo](https://incredible-arithmetic-3dc5ed.netlify.app)           |          0          |          5          |     0      |
+| [14 Jalisco](https://heartfelt-fudge-936865.netlify.app)                 |          5          |          6          |     5      |
+| [15 Estado de México](https://inquisitive-tartufo-8d5181.netlify.app)    |          0          |          2          |     0      |
+| [16 Michoacán](https://fabulous-mermaid-31ea6a.netlify.app)              |          4          |          8          |     4      |
+| [17 Morelos](https://glistening-griffin-b8023f.netlify.app)              |          2          |          3          |     2      |
+| [18 Nayarit](https://idyllic-granita-6918af.netlify.app)                 |          2          |          1          |     1      |
+| [19 Nuevo León](https://starlit-lolly-ad7d14.netlify.app)                |          6          |          4          |     3      |
+| [20 Oaxaca](https://merry-figolla-08f5bf.netlify.app)                    |          7          |         14          |     7      |
+| [21 Puebla](https://snazzy-figolla-e17977.netlify.app/#)                 |          3          |          6          |     3      |
+| 22 Queretaro                                                             |          0          |          0          |     0      |
+| [23 Quintana Roo](https://helpful-pegasus-ba8bb9.netlify.app)            |          5          |          4          |     4      |
+| [24 San Luis Potosí](https://wonderful-belekoy-db9c08.netlify.app)       |          2          |          3          |     1      |
+
+## [Avances de la Identificación de Escenarios Epidemiológicos]{.r-fit-text style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+| Estado                                                                   | Hotspots del Dengue | Hotspots del Vector | Escenarios |
+|------------------|:----------------:|:----------------:|:----------------:|
+| [25 Sinaloa](https://cosmic-dusk-10e889.netlify.app)                     |          5          |          5          |     5      |
+| [26 Sonora](https://soft-donut-e34403.netlify.app)                       |          4          |          4          |     4      |
+| [27 Tabasco](https://capable-torrone-6eae7f.netlify.app)                 |          5          |         13          |     5      |
+| [28 Tamaulipas](https://zingy-tarsier-e2570c.netlify.app)                |          7          |          6          |     6      |
+| 29 Tlaxcala                                                              |          0          |          0          |     0      |
+| [30 Veracruz](https://zippy-bunny-bdd8c7.netlify.app)                    |         13          |         11          |     13     |
+| [31 Yucatán](https://keen-dango-d1cd7e.netlify.app)                      |          4          |          7          |     4      |
+| [32 Zacatecas](https://mellifluous-banoffee-e28771.netlify.app)          |          1          |          6          |     1      |
 
 
 ## [Dios Botic]{style="color:#003300;"}

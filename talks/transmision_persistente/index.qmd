@@ -293,8 +293,18 @@ denhotspots::map_risk(risk = risk,
 
 
 
-## [Definición de los Escenarios Operativos ó Epidemiológicos]{.r-fit-text style="color:#003300;"}
+## [Avances de la Identificación de Escenarios Epidemiológicos]{.r-fit-text style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+&nbsp;
+
+&nbsp;
+
+| Date | Reporte | Estados |
+|------------------|:----------------:|:----------------:|
+|  2024-02-14      | Primer reporte   |      12          |
+|  2024-05-13      | Segundo reporte  |      22          |
+|  2024-07-27      | Primer reporte.  |      32          |
 
 
 ## [Dios Botic]{style="color:#003300;"}

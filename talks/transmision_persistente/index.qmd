@@ -551,11 +551,19 @@ ggstats::ggcoef_compare(models,
 ## [Perspectivas de los Escenarios Epidemiológicos con la Transmisión Persistente ]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+&nbsp;
+
    - Geocodificar los casos de los estados con mucha localidades hotspots del vector pero con pocas localidades con escenarios.
+
+&nbsp;
 
    - Actualizar los hotspots y los escenarios epidemiológicos con los hexágonos.
 
+&nbsp;
+
    - Evaluar realizar la predicción de los huevos sobre los hexagonos.
+
+&nbsp;
 
    - Validar los hotspots y los escenarios epidemiológicos con **casos**, **adultos**, **huevos**, **RO**, & **FOI**.
 

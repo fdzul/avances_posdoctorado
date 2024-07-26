@@ -25,7 +25,7 @@ a <- denhotspots::risk_ageb(betas = denmex::eggs_betas_14_jalisco,
                                          "Tlaquepaque", "Tonalá"),
                             cve_edo = "14") |>
     denhotspots::map_risk(staticmap = FALSE)
-
+load("~/Dropbox/r_developments/r_talks/2024/avances_posdoctorado/talks/transmision_persistente/hotspots_h3.RData")
 b <- denhotspots::risk_h3(betas = denmex::eggs_betas_14_jalisco,
                      hotspots = hotspots_h3,
                      intensity_perc = 20,

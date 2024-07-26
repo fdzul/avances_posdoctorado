@@ -319,8 +319,6 @@
       margin-right: 0; 
     }
   </style>
-<script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="index_files/libs/viz-1.8.2/viz.js"></script><link href="index_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-<script src="index_files/libs/grViz-binding-1.0.11/grViz.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -355,7 +353,7 @@ Dra. Victoria Pando
 Date: 2024-07-27
 </h3>
 <p><br></p>
-<p><img data-src="odmap.png" class="absolute" style="top: 300px; left: 700px; width: 1000px; "></p>
+<p><img data-src=".png" class="absolute" style="top: 300px; left: 700px; width: 1000px; "></p>
 </section><section id="hipótesis-objetivo-general" class="slide level2"><h2><span style="color:#003300;">Hipótesis &amp; Objetivo General</span></h2>
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 <p>&nbsp;</p>
@@ -378,25 +376,6 @@ Date: 2024-07-27
 <p><span style="color:#003300;"><strong>6. Identificar los hotspots de abundancia reciente del vector en localidades prioritarias.</strong></span></p>
 <p><span style="color:#003300;"><strong>7. Determinar la concordancia espacial entre las cadenas de transmisión, lo mapas de calor y los hotspots de abundancia reciente del vector en las localidades prioritarias.</strong></span></p>
 <p><a href="">8. Desarrollar un modelo estratégico de focalización del dengue en las localidades prioritarias.</a></p>
-</section><section id="flujograma-del-análisis-espacial-de-la-transmisión-del-dengue" class="slide level2"><h2><span class="r-fit-text" style="color:#003300;" data-auto-animate="true">Flujograma del Análisis Espacial de la Transmisión del Dengue</span></h2>
-<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
-<div class="columns">
-<div class="column" style="width: 50%">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="htmlwidget-033ea4230239342b1aa2" style="width:800px;height:700px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-033ea4230239342b1aa2">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### epidemiological data\n  \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Transmision Persistente\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Transmisión Reciente\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Transmisión Reciente\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Transmisión Activa\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  areal [label = \"Areal Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  pp_data [label = \"Point Pattern Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n  \n \n # Análisis \n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cadenas [label = \"Cadenas de Transmisión\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cluster_ana [label = \"Cluster Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n lgcp [label = \"Spatial LGCP\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n heatmap [label = \"Mapas de Calor\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n \n geoda [label = \"Geoda\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n cluster_s [label = \"ClusterSeer\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n satscan [label = \"SatScan\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n \n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  denhotspot [label = \"denhotspots Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n ##### define the relation\n \n epi -> {data_historic  data_datos_actuales}\n data_historic -> areal -> hotspots -> geoda\n data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas lgcp cluster_ana heatmap}\n cadenas -> cluster_s\n cluster_ana -> satscan\n \n {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</div><div class="column" style="width: 50%">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="htmlwidget-2827115cd4f9c52e2e32" style="width:800px;height:800px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2827115cd4f9c52e2e32">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### entomological data\n  \n  ento [label = \"Vigilancia Entomológica\",  fillcolor =  \"#FF5A5F\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  years  [label = \"2014-2019\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos del Año Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos hasta la Semana Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Semana Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  geo_data [label = \"Geoestatistical Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n  \n \n # Análisis \n spde [label = \"SPDE-INLA\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n #prediction [label = \"Predicción Espacial de Huevos\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n # entomological study\n ovitraps [label = \"Ovitrampas\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  enc_ver [label = \"Encuesta-Verificación\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  adults [label = \"Colecta de Adultos\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n deneggs [label = \"deneggs Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n \n \n \n ##### define the relation\n \n \n ento -> {ovitraps  enc_ver adults} \n \n {ovitraps adults} -> geo_data -> {data_historic data_datos_actuales}\n data_historic -> years\n \n data_datos_actuales -> {data_acumulados data_trans_activa}\n \n {years data_acumulados data_trans_activa} ->spde -> hotspots\n \n {hotspots} -> r_rstudio -> deneggs\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</div>
-</div>
 </section><section id="desarrollo-conceptual-del-modelo-estratégico-de-focalización-del-dengue" class="slide level2"><h2><span class="r-fit-text" style="color:#003300;">Desarrollo Conceptual del <strong>Modelo Estratégico de Focalización del Dengue</strong></span></h2>
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 <div class="columns">
@@ -491,7 +470,7 @@ Date: 2024-07-27
 <td>08 Chihuahua</td>
 </tr>
 <tr class="odd">
-<td>09 Ciudad de México</td>
+<td><a href="https://euphonious-crostata-930ad9.netlify.app">09 Ciudad de México</a></td>
 </tr>
 <tr class="even">
 <td><a href="https://preeminent-nougat-6307ee.netlify.app">10 Durango</a></td>
@@ -641,7 +620,7 @@ Date: 2024-07-27
 <td style="text-align: center;">0</td>
 </tr>
 <tr class="odd">
-<td>09 Ciudad de México</td>
+<td><a href="https://euphonious-crostata-930ad9.netlify.app">09 Ciudad de México</a></td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>

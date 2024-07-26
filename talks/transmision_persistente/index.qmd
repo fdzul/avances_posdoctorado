@@ -33,7 +33,7 @@ execute:
 
 <br> 
 
-![](){.absolute top="300" left="700" width="1000"}
+![](transmision_activa_lgcp.jpg){.absolute top="200" left="600" width="800"}
 
 
 ## [Hipótesis & Objetivo General]{style="color:#003300;"}
@@ -527,6 +527,38 @@ leafsync::sync(a,b, ncol = 1)
 :::
 
 ::::
+
+## [Validación de los hotspots de dengue y los escenarios epidemiológicos ]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r, echo=FALSE}
+load("~/Dropbox/r_developments/r_talks/2024/avances_posdoctorado/talks/transmision_persistente/risk.RData")
+source("~/Dropbox/r_developments/r_talks/2024/avances_posdoctorado/talks/transmision_persistente/risk_validation.R")
+
+
+models <- list("AGEB Hotspots" = risk_validation(hot_agebs_gua, risk = FALSE),
+               "AGEB Escenarios" = risk_validation(hot_agebs_gua, risk = TRUE),
+               "Hexágon Hotspots" = risk_validation(hot_hex_gua, risk = FALSE),
+               "Hexágon Escenarios" = risk_validation(hot_hex_gua, risk = TRUE))
+
+ggstats::ggcoef_compare(models, 
+                        type = "faceted",
+                        exponentiate = TRUE)
+
+```
+
+
+## [Perspectivas de los Escenarios Epidemiológicos con la Transmisión Persistente ]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+   - Geocodificar los casos de los estados con mucha localidades hotspots del vector pero con pocas localidades con escenarios.
+
+   - Actualizar los hotspots y los escenarios epidemiológicos con los hexágonos.
+
+   - Evaluar realizar la predicción de los huevos sobre los hexagonos.
+
+   - Validar los hotspots y los escenarios epidemiológicos con **casos**, **adultos**, **huevos**, **RO**, & **FOI**.
+
 
 
 ## [Dios Botic]{style="color:#003300;"}

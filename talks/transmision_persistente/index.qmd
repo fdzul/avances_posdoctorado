@@ -561,7 +561,7 @@ ggstats::ggcoef_compare(models,
 
 &nbsp;
 
-   - Evaluar realizar la predicción de los huevos sobre los hexagonos.
+   - Evaluar realizar la predicción de los huevos sobre los hexágonos.
 
 &nbsp;
 

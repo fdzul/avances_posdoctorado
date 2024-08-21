@@ -1,0 +1,693 @@
+---
+format: 
+  revealjs:
+    #theme: ["theme/q-theme.scss"]
+    slide-number: c/t
+    logo: "https://www.insp.mx/assets/images/insp.png"
+    footer: "[github.com/fdzul](https://github.com/fdzul)"
+    code-copy: true
+    center-title-slide: false
+highlight-style: a11y
+code-link: true
+height: 1080
+width: 1600
+execute: 
+  eval: true
+  echo: true
+---
+
+<h1>[Análisis Espacial del Dengue]{style="color:#003300;"}<br>en México</h1>
+
+<h2> </h2>
+
+<hr>
+<br> 
+<h3>Alumno</h3>
+<h3>[Dr. Felipe Dzul Manzanilla]{style="color:#620002;"} </h3>
+<br> 
+<h3>Director </h3>
+<h3>[Dr. Héctor Gómez-Dantés]{style="color:#620002;"}</h3>
+<h3>Co-directora </h3>
+<h3>Dra. Victoria Pando</h3>
+<h3> Date:   2024-08-22</h3>
+
+<br> 
+
+![](transmision_activa_lgcp.jpg){.absolute top="200" left="600" width="800"}
+
+```{r setup}
+#| echo: false
+library(sf)
+mapview::mapviewOptions(default = TRUE,
+                        basemaps.color.shuffle = FALSE)
+```
+
+
+## [Hipótesis & Objetivo General]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+&nbsp;
+
+### Hipótesis
+
+La concordancia espacial entre el [binomio hotspots de la transmisión persistente-hotspots de la abundancia persistente del vector]() y el [trinomio cadenas de transmisión-hotspots de la abundancia-mapas de calor](), proporcionan un marco de estratificación para la [identificación de los escenarios escenarios epidemiológicos u operativos]() que permiten desarrollar un modelo estratégico de focalización para el control integrado de las arbovirosis
+
+&nbsp;
+
+### Meta
+
+[Desarrollar un modelo estratégico de focalización del dengue en México.]()
+
+&nbsp;
+
+### Objetivo General
+
+[Realizar el Análisis Espacial de las Arbovirosis en México.]()
+
+
+## [Objetivos Específicos]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+&nbsp;
+
+[**1. Identificar los hotspots de la transmisión persistente de las arbovirosis en localidades prioritarias.**]{style="color:#620002;"}
+
+[**2. Identificar los hotspots de abundancia persistente del vector en localidades prioritarias.**]{style="color:#620002;"}
+
+[**3. Determinar la concordancia espacial entre los hotspots de la transmisión persistente y los hotspots de abundancia persistente del vector en las localidades prioritarias.**]{style="color:#620002;"}
+
+[**4. Identificar las cadenas de transmisión activa de las arbovirosis en localidades prioritarias.**]{style="color:#003300;"}
+
+[**5. Identificar las áreas con mayor concentración de transmisión activa (mapas de calor) en las localidades prioritarias.**]{style="color:#003300;"}
+
+[**6. Identificar los hotspots de abundancia reciente del vector en localidades prioritarias.**]{style="color:#003300;"}
+
+[**7. Determinar la concordancia espacial entre las cadenas de transmisión, lo mapas de calor y los hotspots de abundancia reciente del vector en las localidades prioritarias.**]{style="color:#003300;"}
+
+[8. Desarrollar un modelo estratégico de focalización del dengue en las localidades prioritarias.]()
+
+
+
+
+
+## [Desarrollo Conceptual del **Modelo Estratégico de Focalización del Dengue**]{.r-fit-text style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+:::: {.columns}
+
+::: {.column style="width: 50%"}
+Concepto
+
+![](https://github.com/fdzul/spatial_analysis_dengue_R_2024_talks/blob/main/talks/mia/transmision_persistente.jpg?raw=true){.absolute right="800" height="815"}
+:::
+
+:::{.column style="width: 50%"}
+Mapa de riesgo
+<img src = "https://github.com/fdzul/spatial_analysis_dengue_R_2024_talks/blob/main/talks/spatial_analysis_dengue/fig/map_risk_guadalajara.jpg?raw=true">
+:::
+
+::::
+
+## [Definición de los Escenarios Operativos ó Epidemiológicos]{.r-fit-text style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+:::: {.columns}
+
+::: {.column style="width: 40%;font-size: 100%"}
+&nbsp;
+
+<span style="color:#F44B1FFF;">Riesgo Muy Alto de Transmisión.</span> Hotposts de casos + hotspots del vector.
+
+&nbsp;
+
+<span style="color:#FF9000FF;">Riesgo Alto de Transmisión.</span> Hotspots de transmisión.
+
+&nbsp;
+
+<span style="color:gold;">Riesgo Medio de Transmisión.</span>
+Hotspots del vector.
+
+&nbsp;
+
+<span style="color:#00F293FF;">Riesgo Bajo de Transmisión.</span>
+Sin hotspots de transmisión o hotspots del vector.
+
+:::
+
+::: {.column style="width: 60%"}
+```{r risk_merida2}
+#| fig-width: 10
+#| fig-height: 10
+#| echo: false
+# Step 1. calculate the risk ####
+risk <- denhotspots::risk_ageb(betas = denmex::eggs_betas_31_yucatan,
+                               hotspots = denmex::den_hotspots,
+                               intensity_perc = 25,
+                               locality = "Mérida",
+                               cve_edo = "31")
+
+# Step 2. map ####
+denhotspots::map_risk(risk = risk,
+                      staticmap = TRUE)
+```
+:::
+
+::::
+
+## [Hotspots en AGEBs & Hexágonos]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+:::: {.columns}
+
+::: {.column style="width: 50%; font-size: 90%"}
+Guadalajara
+```{r, echo=FALSE}
+
+mapview::mapviewOptions(default = TRUE,
+                        basemaps.color.shuffle = FALSE)
+# Step 1. load the dataset ####
+load("/Users/fdzul/Dropbox/hotspots_2023/8.RData/denmex.RData")
+
+# Step 2.1 extract the locality ####
+agebs <- rgeomex::extract_ageb(locality = c("Guadalajara", "Zapopan", 
+                                        "Tlaquepaque", "Tonalá"), 
+                           cve_edo = "14")
+
+# Step 2.2 extract the hexagons ####
+hex <- popmex::hdx_pop2023[agebs$locality,]
+
+
+# Step 3.1 count cases by AGEB ####
+c_agebs <- denhotspots::point_to_polygons(x = xy,
+                                          y = agebs$ageb,
+                                          ids = names(agebs$ageb)[-10],
+                                          time = ANO,
+                                          coords = c("long", "lat"),
+                                          crs = 4326,
+                                          dis = "DENV") 
+
+# Step 3.2 Count the cases by hexágons ####
+library(magrittr)
+c_hex <- denhotspots::point_to_polygons(x = xy,
+                                        y = hex, ##
+                                        ids = c("h3","population"), ###
+                                        time = ANO,
+                                        coords = c("long", "lat"),
+                                        crs = 4326,
+                                        dis = "DENV")
+sf::st_geometry(c_hex) <- "geometry"
+
+
+# Step 4.1 Calculate the hotspots by hexagon ####
+hotspots_hex <- denhotspots::gihi(x = c_hex,
+                                    id = c("h3","population"), 
+                                    time = "year",
+                                    dis = "DENV",
+                                    gi_hi = "gi",
+                                    alpha = 0.95)
+
+# Step 4.2 hotspots ####
+hotspots_agebs <- denhotspots::gihi(x = c_agebs,
+                                    id = names(c_agebs)[c(1:9)], 
+                                    time = "year",
+                                    dis = "DENV",
+                                    gi_hi = "gi",
+                                    alpha = 0.95)
+
+# Step 5.1 Interactive Map ####
+a <- mapview::mapview(hotspots_agebs,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions =  rcartocolor::carto_pal(n = max(hotspots_agebs$intensity_gi), 
+                                                       name = "OrYel"))
+
+# Step 5.2 Interactive Map ####
+b <- mapview::mapview(hotspots_hex,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions =  rcartocolor::carto_pal(n = max(hotspots_hex$intensity_gi), 
+                                                       name = "OrYel"))
+
+
+leafsync::sync(a,b, ncol = 1)
+
+```
+
+:::
+
+::: {.column style="width: 50%; font-size: 90%"}
+Tuxtla Gutierrez
+```{r, echo=FALSE}
+mapview::mapviewOptions(default = TRUE,
+                        basemaps.color.shuffle = FALSE)
+# Step 1. load the dataset ####
+load("/Users/fdzul/Dropbox/hotspots_2023/8.RData/denmex.RData")
+
+# Step 2.1 extract the locality ####
+agebs <- rgeomex::extract_ageb(locality = "Tuxtla Guetierrez", 
+                               cve_edo = "07")
+
+# Step 2.2 extract the hexagons ####
+hex <- popmex::hdx_pop2023[agebs$locality,]
+
+
+# Step 3.1 count cases by AGEB ####
+c_agebs <- denhotspots::point_to_polygons(x = xy,
+                                          y = agebs$ageb,
+                                          ids = names(agebs$ageb)[-10],
+                                          time = ANO,
+                                          coords = c("long", "lat"),
+                                          crs = 4326,
+                                          dis = "DENV") 
+
+# Step 3.2 Count the cases by hexágons ####
+library(magrittr)
+c_hex <- denhotspots::point_to_polygons(x = xy,
+                                        y = hex, ##
+                                        ids = c("h3","population"), ###
+                                        time = ANO,
+                                        coords = c("long", "lat"),
+                                        crs = 4326,
+                                        dis = "DENV")
+sf::st_geometry(c_hex) <- "geometry"
+
+
+# Step 4.1 Calculate the hotspots by hexagon ####
+hotspots_hex <- denhotspots::gihi(x = c_hex,
+                                    id = c("h3","population"), 
+                                    time = "year",
+                                    dis = "DENV",
+                                    gi_hi = "gi",
+                                    alpha = 0.95)
+
+# Step 4.2 hotspots ####
+hotspots_agebs <- denhotspots::gihi(x = c_agebs,
+                                    id = names(c_agebs)[c(1:9)], 
+                                    time = "year",
+                                    dis = "DENV",
+                                    gi_hi = "gi",
+                                    alpha = 0.95)
+
+# Step 5.1 Interactive Map ####
+a <- mapview::mapview(hotspots_agebs,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions =  rcartocolor::carto_pal(n = max(hotspots_agebs$intensity_gi), 
+                                                       name = "OrYel"))
+
+# Step 5.2 Interactive Map ####
+b <- mapview::mapview(hotspots_hex,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions =  rcartocolor::carto_pal(n = max(hotspots_hex$intensity_gi), 
+                                                       name = "OrYel"))
+
+
+leafsync::sync(a,b, 
+               ncol = 1)
+
+```
+
+:::
+
+::::
+
+## [Escenarios Epidemiológicos en AGEBs & Hexágonos ]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+:::: {.columns}
+
+::: {.column style="width: 50%; font-size: 90%"}
+Guadalajara
+```{r, echo=FALSE}
+
+mapview::mapviewOptions(default = TRUE,
+                        basemaps.color.shuffle = FALSE)
+a <- denhotspots::risk_ageb(betas = denmex::eggs_betas_14_jalisco,
+                            hotspots = denmex::den_hotspots,
+                            intensity_perc = 10,
+                            locality = c("Guadalajara", "Zapopan", 
+                                         "Tlaquepaque", "Tonalá"),
+                            cve_edo = "14") |>
+    denhotspots::map_risk(staticmap = FALSE)
+load("~/Dropbox/r_developments/r_talks/2024/avances_posdoctorado/talks/transmision_persistente/hotspots_h3.RData")
+b <- denhotspots::risk_h3(betas = denmex::eggs_betas_14_jalisco,
+                     hotspots = hotspots_h3,
+                     intensity_perc = 20,
+                     locality = c("Guadalajara", "Zapopan", 
+                                  "Tlaquepaque", "Tonalá"),
+                     cve_edo = "14") |>
+    denhotspots::map_risk(staticmap = FALSE)
+
+leafsync::sync(a,b, ncol = 1)
+
+```
+
+:::
+
+::: {.column style="width: 50%; font-size: 90%"}
+Tuxtla Gutierrez
+```{r, echo=FALSE}
+mapview::mapviewOptions(default = TRUE,
+                        basemaps.color.shuffle = FALSE)
+# Step 1. calculate the risk ####
+load("~/Dropbox/projects/ETV/dengue/spatio_temporal_analysis_eggs/8.RData/hotspots_eggs/tuxtla_eggs_hotspots.RData")
+a <- denhotspots::risk_ageb(betas = tuxtla$betas,
+                       hotspots = denmex::den_hotspots,
+                       intensity_perc = 10,
+                       locality = "Tuxtla Gutierrez",
+                       cve_edo = "07") |>
+    denhotspots::map_risk(staticmap = FALSE)
+
+
+load("~/Dropbox/projects/ETV/dengue/spatio_temporal_analysis_eggs/8.RData/hotspots_cases/tuxtla_hotspots_h3.RData")
+b <- denhotspots::risk_h3(betas = tuxtla$betas,
+                     hotspots = hotspots_h3,
+                     intensity_perc = 20,
+                     locality = "Tuxtla Gutierrez",
+                     cve_edo = "07") |>
+    denhotspots::map_risk(staticmap = FALSE)
+
+leafsync::sync(a,b, ncol = 1)
+
+```
+
+:::
+
+::::
+
+
+
+## [Observaciones de la reunión del 26 de Julio de 2022 ]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+    - <h3>[Actualizar los hotspots con la base de datos de los hexágonos ([h3](https://h3geo.org)).]{style="color:#620002;"} </h3>
+
+    - <h3>[Redefinir la definición del riesgo y buscar el nombre adecuado{style="color:#620002;"} </h3>
+   
+ 
+## [Actualización de los Hotspots en Hexágonos]{style="color:#003300;"}  
+  
+<html>
+<head>
+```{=html}
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+```
+</head>
+<body>
+<h1>
+</h1>
+<p>
+</p>
+
+::: grid-container
+
+::: grid-item
+```{r acapulco_hotspots}
+#| echo: false
+#| output: true
+load("/Users/fdzul/Dropbox/hotspots_2023/8.RData/hotspots_hexagons/hotspots_hexagon_clustering.RData")
+# Step 1. extract the localidty
+loc <- rgeomex::extract_locality(locality = "Acapulco de Juarez", 
+                                 cve_edo = "12")
+
+# Step 2. extract the locality ####
+hotspots <- hotspots[loc, ]
+
+ # Step 3 Interactive Map ####
+pal <- rcartocolor::carto_pal(n = max(hotspots$intensity_gi), 
+                              name = "OrYel")
+mapview::mapview(hotspots,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions = pal)
+
+```
+:::
+
+::: grid-item
+```{r merida_hotspots}
+#| echo: false
+#| output: true
+load("/Users/fdzul/Dropbox/hotspots_2023/8.RData/hotspots_hexagons/hotspots_hexagon_clustering.RData")
+# Step 1. extract the localidty
+loc <- rgeomex::extract_locality(locality = c("Mérida", "Umán",
+                                              "Kanasín", "caucel"),
+                                 cve_edo = "31")
+
+# Step 2. extract the locality ####
+hotspots <- hotspots[loc, ]
+
+ # Step 3 Interactive Map ####
+pal <- rcartocolor::carto_pal(n = max(hotspots$intensity_gi), 
+                              name = "OrYel")
+mapview::mapview(hotspots,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions = pal)
+```
+:::
+
+::: grid-item
+```{r cancun_hotspots}
+#| echo: false
+#| output: true
+load("/Users/fdzul/Dropbox/hotspots_2023/8.RData/hotspots_hexagons/hotspots_hexagon_clustering.RData")
+# Step 1. extract the localidty
+loc <- rgeomex::extract_locality(locality = "Cancun", 
+                                 cve_edo = "23")
+
+# Step 2. extract the locality ####
+hotspots <- hotspots[loc, ]
+
+ # Step 3. Interactive Map ####
+pal <- rcartocolor::carto_pal(n = max(hotspots$intensity_gi), 
+                              name = "OrYel")
+mapview::mapview(hotspots,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions = pal)
+```
+:::
+
+::: grid-item
+```{r guadalajara_hotspots}
+#| echo: false
+#| output: true
+load("/Users/fdzul/Dropbox/hotspots_2023/8.RData/hotspots_hexagons/hotspots_hexagon_clustering.RData")
+# Step 1. extract the localidty
+loc <- rgeomex::extract_locality(locality = c("Guadalajara", "Zapopan", 
+                                              "Tlaquepaque", "Tonalá"), 
+                                 cve_edo = "14")
+
+# Step 2. extract the locality ####
+hotspots <- hotspots[loc, ]
+
+ # Step 3- Interactive Map ####
+pal <- rcartocolor::carto_pal(n = max(hotspots$intensity_gi), 
+                              name = "OrYel")
+mapview::mapview(hotspots,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions = pal)
+```
+:::
+
+
+:::
+
+</body>
+</html>
+  
+
+
+## [Actualización de los Hotspots en Hexágonos]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+<html>
+<head>
+```{=html}
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+```
+</head>
+<body>
+<h1>
+</h1>
+<p>
+</p>
+
+::: grid-container
+
+
+::: grid-item
+```{r comarca_lagunera_hotspots}
+#| echo: false
+#| output: true
+load("/Users/fdzul/Dropbox/hotspots_2023/8.RData/hotspots_hexagons/hotspots_hexagon_clustering.RData")
+# extract the hotspots of the comarca lagunera
+hotspots <- hotspots |>
+    dplyr::filter(id == 145)
+ # Step 4 Interactive Map ####
+pal <- rcartocolor::carto_pal(n = max(hotspots$intensity_gi), 
+                              name = "OrYel")
+mapview::mapview(hotspots,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions = pal)
+```
+:::
+
+::: grid-item
+```{r veracruz_hotspots}
+#| echo: false
+#| output: true
+load("/Users/fdzul/Dropbox/hotspots_2023/8.RData/hotspots_hexagons/hotspots_hexagon_clustering.RData")
+# Step 1. extract the localidty
+loc <- rgeomex::extract_locality(locality = c("Veracruz", "Boca del Rio"), 
+                                 cve_edo = "30")
+
+# Step 2. extract the locality ####
+hotspots <- hotspots[loc, ]
+
+ # Step 3- Interactive Map ####
+pal <- rcartocolor::carto_pal(n = max(hotspots$intensity_gi), 
+                              name = "OrYel")
+mapview::mapview(hotspots,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions = pal)
+```
+:::
+
+::: grid-item
+```{r tapachula_hotspots}
+#| echo: false
+#| output: true
+load("/Users/fdzul/Dropbox/hotspots_2023/8.RData/hotspots_hexagons/hotspots_hexagon_clustering.RData")
+# Step 1. extract the localidty
+loc <- rgeomex::extract_locality(locality = "Tapachula de Cordoba y Ordoñez", 
+                                 cve_edo = "07")
+
+# Step 2. extract the locality ####
+hotspots <- hotspots[loc, ]
+
+ # Step 3- Interactive Map ####
+pal <- rcartocolor::carto_pal(n = max(hotspots$intensity_gi), 
+                              name = "OrYel")
+mapview::mapview(hotspots,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions = pal)
+```
+:::
+
+::: grid-item
+```{r mazatlan_hotspots}
+#| echo: false
+#| output: true
+load("/Users/fdzul/Dropbox/hotspots_2023/8.RData/hotspots_hexagons/hotspots_hexagon_clustering.RData")
+# Step 1. extract the localidty
+loc <- rgeomex::extract_locality(locality = "Mazatlan", 
+                                 cve_edo = "25")
+
+# Step 2. extract the locality ####
+hotspots <- hotspots[loc, ]
+
+ # Step 3- Interactive Map ####
+pal <- rcartocolor::carto_pal(n = max(hotspots$intensity_gi), 
+                              name = "OrYel")
+mapview::mapview(hotspots,
+                 zcol = "intensity_gi",
+                 layer.name = "Intensidad",
+                 label = FALSE,
+                 color = "white",
+                 lwd = 0.5, 
+                 col.regions = pal)
+```
+:::
+
+
+:::
+
+</body>
+</html>
+  
+
+  
+## [Redefinir el Concepto de Riesgo]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+
+## [Dios Botic]{style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+-   ***Bio*** : [https://fdzul.github.io/web_site_fadm/]()
+
+-   ***email*** : [felipe.dzul.m\@gmail.com]()
+
+-   ***celular*** : [9999580167]()
+
+-   ***slide***: [link](https://glowing-conkies-a3b760.netlify.app/talks/observaciones/#/)
+

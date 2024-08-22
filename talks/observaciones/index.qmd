@@ -393,15 +393,13 @@ leafsync::sync(a,b, ncol = 1)
 ## [Observaciones de la reunión del 26 de Julio de 2022 ]{style="color:#003300;"}
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
-::: {style="font-size: 100%;"}
 
 - [Actualizar los hotspots con la base de datos de los hexágonos [h3](https://h3geo.org).]{style="color:#620002;"}
 
-- [Redefinir la definición del riesgo y buscar el nombre adecuado]{style="color:#620002;"}
+- [Redefinición de los escenarios epidemiológicos]{style="color:#620002;"}
 
-- [Geocodificar los estados con hotspots de huevos pero no hotspots de casos]{style="color:#620002;"}
+- [Geocodificar los estados con hotspots de huevos pero no hotspots de casos]
 
-:::
  
 ## [Actualización de los Hotspots en Hexágonos]{style="color:#003300;"}  
   

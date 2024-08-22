@@ -38,7 +38,9 @@ intensity_function <- function(x){
         as.data.frame()
 }
 
-x1 <- x |>
+
+
+x <- x |>
     dplyr::group_by(year) |>
     tidyr::nest() |>
     dplyr::mutate(intensity = purrr::map(data,intensity_function)) |>
@@ -48,28 +50,28 @@ x1 <- x |>
                        names_from = year,
                        values_from = intensity) |>
     dplyr::mutate(intensidad = rowMeans(dplyr::across(dplyr::starts_with("2")))) |>
+    dplyr::mutate(x = round(x, 2),
+                  y = round(x, 2)) |>
     dplyr::select(x, y, intensidad)
 
 
-reactable::reactable(x1,
+# Step 2. make the clustering of intensity ####
+set.seed(12345)
+res_mediods <- cluster::pam(x$intensidad,
+                            metric = "euclidean",
+                            k = 5)
+x <- x |>
+    dplyr::mutate(ento_cluster = res_mediods$cluster)
+
+reactable::reactable(x,
                      fullWidth = FALSE,
-                     #defaultColDef = reactable::colDef(minWidth = 100,
-                     #                                 align = "center"),
-                     defaultSorted = c("intensidad"),
-                     defaultPageSize = 9,
                      defaultColDef = reactable::colDef(minWidth = 100,
-                                                       align = "center",
-                                                       footer = function(values) {
-                                                           if (!is.numeric(values)) return()
-                                                           sparkline::sparkline(values, 
-                                                                                type = "box", 
-                                                                                width = 50*3, 
-                                                                                height = 15*2)
-                                                       }),
+                                                      align = "center",
+                                                      style = reactablefmtr::cell_style(font_size = 12)),
+                     defaultSorted = c("intensidad", "ento_cluster"),
+                     defaultPageSize = 8,
                      compact = TRUE,
                      striped = TRUE,
                      outlined = TRUE)
 
 
-gtExtras::gt_plt_summary(x1,
-                         title = "Hotspots de Huevos de Ae. aegypti")
